@@ -92,7 +92,7 @@
         // specify some rewards
         var Rarr = R.zeros(this.gs);
         var T = R.zeros(this.gs);
-        Rarr[19] = 1;
+        Rarr[19] = 100;
 
 //         Rarr[54] = -1;
 //         //Rarr[63] = -1;
@@ -151,7 +151,7 @@
         // gridworld is deterministic, so this is easy
         var ns = this.nextStateDistribution(s,a);
         var r = this.Rarr[s]; // observe the raw reward of being in s, taking a, and ending up in ns
-        r -= 0.01; // every step takes a bit of negative reward
+        r -= 0.00; // every step takes a bit of negative reward
         var out = {'ns':ns, 'r':r};
         if(s === 55 && ns === 0) {
           // episode is over
