@@ -85,32 +85,32 @@
       reset: function() {
 
         // hardcoding one gridworld for now
-        this.gh = 10;
-        this.gw = 10;
+        this.gh = 4;
+        this.gw = 5;
         this.gs = this.gh * this.gw; // number of states
 
         // specify some rewards
         var Rarr = R.zeros(this.gs);
         var T = R.zeros(this.gs);
-        Rarr[55] = 1;
+        Rarr[19] = 1;
 
-        Rarr[54] = -1;
-        //Rarr[63] = -1;
-        Rarr[64] = -1;
-        Rarr[65] = -1;
-        Rarr[85] = -1;
-        Rarr[86] = -1;
+//         Rarr[54] = -1;
+//         //Rarr[63] = -1;
+//         Rarr[64] = -1;
+//         Rarr[65] = -1;
+//         Rarr[85] = -1;
+//         Rarr[86] = -1;
 
-        Rarr[37] = -1;
-        Rarr[33] = -1;
-        //Rarr[77] = -1;
-        Rarr[67] = -1;
-        Rarr[57] = -1;
+//         Rarr[37] = -1;
+//         Rarr[33] = -1;
+//         //Rarr[77] = -1;
+//         Rarr[67] = -1;
+//         Rarr[57] = -1;
 
         // make some cliffs
-        for(q=0;q<8;q++) { var off = (q+1)*this.gh+2; T[off] = 1; Rarr[off] = 0; }
-        for(q=0;q<6;q++) { var off = 4*this.gh+q+2; T[off] = 1; Rarr[off] = 0; }
-        T[5*this.gh+2] = 0; Rarr[5*this.gh+2] = 0; // make a hole
+//         for(q=0;q<8;q++) { var off = (q+1)*this.gh+2; T[off] = 1; Rarr[off] = 0; }
+//         for(q=0;q<6;q++) { var off = 4*this.gh+q+2; T[off] = 1; Rarr[off] = 0; }
+//         T[5*this.gh+2] = 0; Rarr[5*this.gh+2] = 0; // make a hole
         this.Rarr = Rarr;
         this.T = T;
       },
